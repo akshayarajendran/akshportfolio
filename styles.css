@@ -395,6 +395,12 @@ span {
     font-size: 2rem;
     transition: background 0.5s ease, color 0.5s ease;
 }
+.multiple-texts {
+    display: inline-block; /* Ensures it's displayed properly */
+    font-size: 3rem; /* Adjust as needed */
+    color: var(--main-color); /* Adjust color if needed */
+}
+
 
 .portfolio-layer a:hover {
     background: var(--main-color);

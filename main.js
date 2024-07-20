@@ -32,7 +32,20 @@ menuIcon.classList.remove('fa-xmark');
 navbar.classList.remove('active');
 };
 
+emailjs.init("5qloB4MxsoWj2jQae"); // Replace with your EmailJS User ID
 
+// Form Submission Handling
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    emailjs.sendForm('service_f0d1w8d', 'template_kvu7hfv', this) 
+      .then(function(response) {
+        alert('Message sent successfully!');
+        document.getElementById("contactForm").reset(); // Reset the form after successful submission
+      }, function(error) {
+        alert('Failed to send message. Please try again.');
+      });
+});
 
 
 ScrollReveal({
@@ -47,9 +60,11 @@ ScrollReveal().reveal('.home-contact h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-contact p', { origin: 'right' });
 
 // Typed.js animations
-const typed = new Typed('.multiple-text', {
-    strings: ['Software Engineer', 'Frontend Developer'],
-    typeSpeed: 70,
-    backSpeed: 70,
-    loop:true, 
+document.addEventListener("DOMContentLoaded", function() {
+    const typed = new Typed('.multiple-texts', {
+        strings: ['Android App Developer', 'Frontend Developer', 'Website Developer'],
+        typeSpeed: 70,
+        backSpeed: 70,
+        loop: true
+    });
 });
