@@ -9,6 +9,7 @@ menuIcon.onclick = () => {
 
 // Scroll section active link
 let sections = document.querySelectorAll('section');
+
 let navLinks = document.querySelectorAll('.header nav a');
 
 window.onscroll = () => {
@@ -32,19 +33,32 @@ menuIcon.classList.remove('fa-xmark');
 navbar.classList.remove('active');
 };
 
-emailjs.init("5qloB4MxsoWj2jQae"); // Replace with your EmailJS User ID
 
-// Form Submission Handling
-document.getElementById("contactForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent default form submission
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwYKXAfrgLcSIMEZljqeMibqdcbF3V_WUHazEQV-ePvcjdtbVsnVrGNixRtjQuAHJ0Ptg/exec';
+const form = document.forms['submit-to-google-sheet'];
 
-    emailjs.sendForm('service_f0d1w8d', 'template_kvu7hfv', this) 
-      .then(function(response) {
-        alert('Message sent successfully!');
-        document.getElementById("contactForm").reset(); // Reset the form after successful submission
-      }, function(error) {
-        alert('Failed to send message. Please try again.');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  fetch(scriptURL, { 
+    method: 'POST', 
+    body: new FormData(form)
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Thank you, your form is submitted successfully', response);
+      alert('Thank you, your form is submitted successfully');
+    } else {
+      return response.json().then(error => {
+        console.error('Error!', error);
+        alert('There was an error submitting the form');
       });
+    }
+  })
+  .catch(error => {
+    console.error('Error!', error.message);
+    alert('There was an error submitting the form');
+  });
 });
 
 
@@ -60,11 +74,9 @@ ScrollReveal().reveal('.home-contact h1, .about-img', { origin: 'left' });
 ScrollReveal().reveal('.home-contact p', { origin: 'right' });
 
 // Typed.js animations
-document.addEventListener("DOMContentLoaded", function() {
-    const typed = new Typed('.multiple-texts', {
-        strings: ['Android App Developer', 'Frontend Developer', 'Website Developer'],
-        typeSpeed: 70,
-        backSpeed: 70,
-        loop: true
-    });
+const typed = new Typed('.multiple-text', {
+    strings: ['Android App Developer', 'Frontend Developer','Website Developer'],
+    typeSpeed: 70,
+    backSpeed: 70,
+    loop:true, 
 });

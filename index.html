@@ -26,9 +26,11 @@
     <div class="home-content">
         <h3>Hello!</h3>
         <h1> I'm Akshaya </h1>
-        <h3>And I'm a <span class="multiple-texts"></span></h3>
+        <h3>And I'm a <span class="multiple-text"></span></h3>
 
-        <p>I create responsive, visually appealing web applications with a focus on user experience and performance. My work emphasizes clean, efficient code and innovative design.</p>
+        <p>I’m a front-end web developer with over a decade of experience. I work with agencies across the globe to create high performance & rich interactive websites that work across all platforms & devices.
+
+            Although I'm very familiar with using frameworks, my websites are primarily hand-coded using HTML5, CSS3, SVG & JavaScript.</p>
         <div class="social-media">
             <a href="https://www.linkedin.com/in/akshgr" target="_blank"  rel="noopener" ><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="https://www.instagram.com/_a_k_s_h_a_y_a___?igsh=dGExancyeHBkN2c1"><i class="fa-brands fa-instagram"></i></a>
@@ -36,7 +38,7 @@
         <a href="Resume_akshaya.pdf" class="btn" download>Download CV</a>
     </div> 
     <div class="home-img">
-        <img src="mypic.jpeg" alt="menu-icon">
+        <img src="image.png" alt="menu-icon">
     </div>
 </section>
 
@@ -105,36 +107,31 @@
   
 <!---- CONTACT SECTION DESIGN -->
 <section class="contact" id="contact">
-<h2 class="heading">Contact <span>Me</span></h2>
-<form action="#">
-<div class="input-box">
-  <input type="text" placeholder="Full Name">
-   <input type="email" placeholder="Email Address">
-</div>
-<br>
- <div class="input-box">
-    <input type="number" placeholder="Mobile number">
-</div><br>
-<textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-<br>
-<input type="submit" value="send message" class="btn">
-</form>
-</section>
-<footer class="footer">
-    <div class="footer-text">
-        <p>Copyright &copy; 2024 by Akshaya| All Rights Reserved</p>
-    </div>
-    <div class="footer-conTop">
-        <a href="#home" class="back-to-top">
-            <i class="fa-solid fa-angle-up"></i> Back to Top
-        </a>
-    </div>
-</footer>
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <form  method="post" action="https://script.google.com/macros/s/AKfycbwYKXAfrgLcSIMEZljqeMibqdcbF3V_WUHazEQV-ePvcjdtbVsnVrGNixRtjQuAHJ0Ptg/exec"  class="portfolio" name="submit-to-google-sheet">
+      <div class="input-box">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+      </div>
+      <br>
+      <div class="input-box">
+        <input type="tel" name="phone" placeholder="Mobile number" required>
+      </div>
+      <br>
+      <textarea name="message" cols="30" rows="10" placeholder="Your message" required></textarea>
+      <br>
+      <input type="submit" value="Send Message" class="btn">
+      <div id="response-message"></div>
+    </form>
+    <script src="main.js"></script>
+  </section>
+  
 
 
 <script src="https://unpkg.com/scrollreveal"></script>
 
 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
 
 <script src="main.js"></script>
 </body>
